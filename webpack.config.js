@@ -4,7 +4,7 @@ const Dotenv = require("dotenv-webpack");
 
 module.exports = (env, argv) => {
   return {
-    entry: "./src/index.js",
+    entry: "./src/script/index.js",
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "main.js",
@@ -30,19 +30,6 @@ module.exports = (env, argv) => {
             },
             {
               loader: "css-loader",
-            },
-          ],
-        },
-
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: "babel-loader",
-              options: {
-                presets: ["@babel/preset-env"],
-              },
             },
           ],
         },
